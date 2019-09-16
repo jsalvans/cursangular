@@ -1,5 +1,5 @@
 {
-  "name": "exemples",
+  "name": "cursangular",
   "version": "0.5.0",
   "scripts": {
     "ng": "ng",
@@ -7,10 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "githubpages": "npm run build-for-git && npm run upload-to-pages",
-    "build-for-git": "ng build --prod --base-href \"https://jsalvans.github.io/cursangulardist/\"",
-    "upload-to-pages": "npx angular-cli-ghpages --dir=dist/exemples --repo=https://483db6fd4784706a079b2ca3d8b50f17fc712d52@github.com/jsalvans/cursangulardist.git"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {

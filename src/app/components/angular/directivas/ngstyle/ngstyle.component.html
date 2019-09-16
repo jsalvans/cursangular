@@ -1,0 +1,143 @@
+<div class="content">
+  <header>
+    <h1 class="title">Directives</h1>
+    <h2 class="subtitle">ngStyle</h2>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+    <p [innerHtml]="'angular.directives.ngstyle.explicacio' | translate"></p>
+    <p>{{ 'representacio.title' | translate }}</p>
+    <ul>
+      <li *ngFor="let representacio of representacions"><code>{{representacio}}</code></li>
+    </ul>
+    <p [innerHtml]="'angular.directives.ngstyle.on1' | translate"></p>
+    <p [innerHtml]="'angular.directives.ngstyle.on2' | translate"></p>
+
+    <h3 class="subtitle">{{ 'exemples' | translate }}</h3>
+    <h4 class="subtitle">{{ 'component' | translate }}</h4>
+    <pre><code [highlight]="component"></code></pre>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 1</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple1"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [ngStyle]="{'color': 'green'}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 2</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple2"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [ngStyle]="{'color': 'green', 'background-color': 'blue'}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 3</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple3"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [ngStyle]="styleObj">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 4</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple4"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [style.color]="'green'">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 5</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple5"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [style.background-color]="styleValue">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 6</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple6"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [style.font-size.px]="'5'">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 7</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple7"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [style.font-size.em]="'5'" [style.white-space]="'nowrap'">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 8</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple8"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [style.font-size.px]="styleValue2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 9</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple9"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [style.font-size.em]="styleValue2" [style.white-space]="'nowrap'">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 10</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple10"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [style.font-size]="styleValue3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+
+  </section>
+</div>

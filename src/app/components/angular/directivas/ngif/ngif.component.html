@@ -1,0 +1,121 @@
+<div class="content">
+  <header>
+    <h1 class="title">Directives</h1>
+    <h2 class="subtitle">ngIf</h2>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+    <p [innerHtml]="'angular.directives.ngif.explicacio' | translate"></p>
+    <p>{{ 'representacio.title' | translate }}</p>
+    <ul>
+      <li>
+        <pre><code highlight='<div *ngIf="condition">content</div>'></code></pre>
+      </li>
+      <li>
+        <pre><code highlight='<ng-template [ngIf]="condition">content</ng-template> <!-- ({{ "angular.directives.ngif.nomes.ngtemplate" | translate }}) -->'></code></pre>
+      </li>
+    </ul>
+    <p [innerHtml]="'angular.directives.ngif.on' | translate"></p>
+
+    <h3 class="subtitle">Else</h3>
+    <p [innerHtml]="'angular.directives.ngif.else.explicacio' | translate"></p>
+    <p>{{ 'representacio.title' | translate }}</p>
+    <ul>
+      <li>
+        <pre><code [highlight]='elserepresentacio1'></code></pre>
+      </li>
+      <li>
+        <pre><code [highlight]='elserepresentacio2'></code></pre>
+      </li>
+    </ul>
+    <p [innerHtml]="'angular.directives.ngif.else.on' | translate"></p>
+
+    <h3 class="subtitle">Then</h3>
+    <p [innerHtml]="'angular.directives.ngif.then.explicacio1' | translate"></p>
+    <p>{{ 'representacio.single.title' | translate }}</p>
+    <pre><code [highlight]='thenrepresentacio'></code></pre>
+    <p [innerHtml]="'angular.directives.ngif.then.on' | translate"></p>
+    <p [innerHtml]="'angular.directives.ngif.then.explicacio2' | translate"></p>
+
+    <h3 class="subtitle">{{ 'exemples' | translate }}</h3>
+    <div class="columns is-desktop">
+      <div class="column">
+        <h4 class="subtitle">{{ 'component' | translate }}</h4>
+        <pre><code [highlight]='component'></code></pre>
+      </div>
+      <div class="column">
+        <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+        <pre><code [highlight]='exemple1'></code></pre>
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <button (click)="show = !show;">Toggle</button>
+        <span *ngIf="show"> HTML </span>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column">
+        <h4 class="subtitle">{{ 'vista' | translate }} ({{ 'mateix.component' | translate }})</h4>
+        <pre><code [highlight]='exemple2'></code></pre>
+      </div>
+      <div class="column">
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <button (click)="show = !show;">Toggle</button>
+        <ng-template [ngIf]="show">
+          <span> HTML </span>
+        </ng-template>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column">
+        <h4 class="subtitle">{{ 'vista' | translate }} ({{ 'mateix.component' | translate }})</h4>
+        <pre><code [highlight]='exemple3'></code></pre>
+      </div>
+      <div class="column">
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <button (click)="show = !show">Toggle</button>
+        <span *ngIf="show; else elseSpan1"> HTML </span>
+        <ng-template #elseSpan1>
+          <span> Else 1 </span>
+        </ng-template>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column">
+        <h4 class="subtitle">{{ 'vista' | translate }} ({{ 'mateix.component' | translate }})</h4>
+        <pre><code [highlight]='exemple4'></code></pre>
+      </div>
+      <div class="column">
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <button (click)="show = !show">Toggle</button>
+        <ng-template [ngIf]="show" [ngIfElse]="elseSpan2">
+          <span> HTML </span>
+        </ng-template>
+        <ng-template #elseSpan2>
+          <span> Else 2 </span>
+        </ng-template>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column">
+        <h4 class="subtitle">{{ 'vista' | translate }} ({{ 'mateix.component' | translate }})</h4>
+        <pre><code [highlight]='exemple5'></code></pre>
+      </div>
+      <div class="column">
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <button (click)="show = !show">Toggle</button>
+        <div *ngIf="show; then thenSpan; else elseSpan3"></div>
+        <ng-template #thenSpan>
+          <span> Then </span>
+        </ng-template>
+        <ng-template #elseSpan3>
+          <span> Else 3 </span>
+        </ng-template>
+      </div>
+    </div>
+
+  </section>
+</div>

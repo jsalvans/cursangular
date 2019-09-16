@@ -1,0 +1,46 @@
+<div class="content">
+  <header>
+    <h1 class="title">Directives</h1>
+    <h2 class="subtitle">ngSwitch</h2>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+    <p [innerHtml]="'angular.directives.ngswitch.explicacio' | translate"></p>
+    <p>{{ 'representacio.single.title' | translate }}</p>
+    <pre><code [highlight]='representacio'></code></pre>
+    <p [innerHtml]="'angular.directives.ngswitch.on1' | translate"></p>
+    <p [innerHtml]="'angular.directives.ngswitch.on2' | translate"></p>
+
+    <h3 class="subtitle">{{ 'exemple' | translate }}</h3>
+
+    <div class="columns is-desktop">
+        <div class="column is-6-desktop">
+            <h4 class="subtitle">{{ 'component' | translate }}</h4>
+            <pre><code [highlight]='component'></code></pre>
+        </div>
+        <div class="column is-6-desktop">
+            <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+            <pre><code [highlight]='exemple'></code></pre>
+        </div>
+    </div>
+    <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+
+    <input id="veganRadio" type="radio" name="menu" value="vegan" [(ngModel)]="menu" />
+    <label for="veganRadio"> Vegan</label><br />
+    <input id="pastaRadio" type="radio" name="menu" value="pasta" [(ngModel)]="menu" />
+    <label for="pastaRadio"> Pasta</label><br />
+    <input id="meatRadio" type="radio" name="menu" value="meat" [(ngModel)]="menu" />
+    <label for="meatRadio"> Meat</label><br />
+    <input id="otherRadio" type="radio" name="menu" value="other" [(ngModel)]="menu" />
+    <label for="otherRadio"> Other</label><br />
+
+    <div [ngSwitch]="menu">
+      <p *ngSwitchCase="'vegan'">Tropical salad</p>
+      <p *ngSwitchCase="'pasta'">Macaroni with carbonara sauce</p>
+      <p *ngSwitchCase="'meat'">Pork Chops</p>
+      <p *ngSwitchDefault>Paella</p>
+    </div>
+
+  </section>
+</div>

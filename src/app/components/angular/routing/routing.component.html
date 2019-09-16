@@ -1,0 +1,97 @@
+<div class="content">
+  <header>
+    <h1 class="title">Routing</h1>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <!-- QUE ES -->
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+    <p [innerHtml]="'angular.routing.explicacio1' | translate"></p>
+    <p [innerHtml]="'angular.routing.explicacio2' | translate"></p>
+    <p [innerHtml]="'angular.routing.explicacio3' | translate"></p>
+
+    <!-- CONFIGURACIO APP -->
+    <h3 class="subtitle">{{ 'angular.routing.config.title' | translate }}</h3>
+    <p [innerHtml]="'angular.routing.config.explicacio1' | translate"></p>
+    <pre><code [highlight]="approutingts"></code></pre>
+    <p [innerHtml]="'angular.routing.config.explicacio2' | translate"></p>
+    <pre><code [highlight]="appmodulets"></code></pre>
+    <p [innerHtml]="'angular.routing.config.explicacio3' | translate"></p>
+    <br />
+    <!-- CONFIGURACIO APP CURTA-->
+    <h4 class="subtitle">{{ 'angular.routing.config.subtitle' | translate }}</h4>
+    <p [innerHtml]="'angular.routing.config.explicacio4' | translate"></p>
+    <pre><code [highlight]="appmoduletsshort"></code></pre>
+
+    <!-- CONFIGURACIO RUTES -->
+    <h3 class="subtitle">{{ 'angular.routing.rutes.title' | translate }}</h3>
+    <p [innerHtml]="'angular.routing.rutes.explicacio1' | translate"></p>
+    <p [innerHtml]="'angular.routing.rutes.explicacio2' | translate"></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 50px;">{{ 'parametre' | translate }}</th>
+          <th style="width: 50px;">{{ 'tipus' | translate }}</th>
+          <th>{{ 'explicacio' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <code>path</code>
+          </td>
+          <td>
+            <i>string</i>
+          </td>
+          <td>
+            {{ 'angular.routing.rutes.taula.path' | translate }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>component</code>
+          </td>
+          <td>
+            <i>component</i>
+          </td>
+          <td>
+            {{ 'angular.routing.rutes.taula.component' | translate }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>redirectTo</code>
+          </td>
+          <td>
+            <i>string</i>
+          </td>
+          <td>
+            {{ 'angular.routing.rutes.taula.redirectTo' | translate }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>canActivate</code>
+          </td>
+          <td>
+            <i>CanActivate</i>
+          </td>
+          <td>
+            {{ 'angular.routing.rutes.taula.canActivate' | translate }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <!-- CONFIGURACIO RUTES EXEMPLES -->
+    <h4 class="subtitle">{{ 'exemples' | translate }}</h4>
+    <pre><code [highlight]="ruteconfigsamples"></code></pre>
+    <ul>
+      <li [innerHtml]="'angular.routing.rutes.exemple1' | translate"></li>
+      <li [innerHtml]="'angular.routing.rutes.exemple2' | translate"></li>
+      <li [innerHtml]="'angular.routing.rutes.exemple3' | translate"></li>
+      <li [innerHtml]="'angular.routing.rutes.exemple4' | translate"></li>
+      <li [innerHtml]="'angular.routing.rutes.exemple5' | translate"></li>
+    </ul>
+  </section>
+</div>

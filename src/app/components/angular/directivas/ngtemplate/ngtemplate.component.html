@@ -1,0 +1,203 @@
+<div class="content">
+  <header>
+    <h1 class="title">Directives</h1>
+    <h2 class="subtitle">{{ 'angular.directives.structures.title' | translate }}</h2>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+
+    <p [innerHtml]="'angular.directives.structures.explicacio1' | translate"></p>
+    <p [innerHtml]="'angular.directives.structures.explicacio2' | translate"></p>
+    <p [innerHtml]="'angular.directives.structures.explicacio3' | translate"></p>
+
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <pre><code [highlight]="exemple1"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <pre><code [highlight]="exemple2"></code></pre>
+      </div>
+    </div>
+
+    <p [innerHtml]="'angular.directives.structures.explicacio4' | translate"></p>
+    <pre><code [highlight]="exemple3"></code></pre>
+
+    <p [innerHtml]="'angular.directives.structures.explicacio5' | translate"></p>
+
+    <h3 class="subtitle">NgContainer</h3>
+
+    <p [innerHtml]="'angular.directives.structures.container.explicacio1' | translate"></p>
+
+    <p [innerHtml]="'angular.directives.structures.container.explicacio2' | translate"></p>
+
+    <h4 class="subtitle">{{ 'exemple' | translate }}</h4>
+    <p [innerHtml]="'angular.directives.structures.container.explicacio3' | translate"></p>
+
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="containerExemple1"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <ng-container>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </ng-container>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="containerExemple2"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <button (click)="show = !show">Toggle</button>
+        <ng-container *ngIf="show">
+          <p *ngFor="let fruit of ['banana', 'orange', 'apple']"> {{fruit}} </p>
+        </ng-container>
+      </div>
+    </div>
+
+    <h3 class="subtitle">NgTemplate</h3>
+
+    <p [innerHtml]="'angular.directives.structures.template.explicacio1' | translate"></p>
+    <p [innerHtml]="'angular.directives.structures.template.explicacio2' | translate"></p>
+    <p [innerHtml]="'angular.directives.structures.template.explicacio3' | translate"></p>
+
+    <h4 class="subtitle">{{ 'exemples' | translate }}</h4>
+    <p [innerHtml]="'angular.directives.structures.template.explicacio4' | translate"></p>
+
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="templateExemple1"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <ng-template>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </ng-template>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="templateExemple2"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <button (click)="show = !show">Toggle</button>
+        <ng-template [ngIf]="show">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </ng-template>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="templateExemple3"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <button (click)="show = !show">Toggle</button>
+        <p *ngIf="show; then thenHtml; else elseHtml"></p>
+        <ng-template #thenHtml>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </ng-template>
+        <ng-template #elseHtml>
+          <p>Nulla scelerisque consectetur urna, id hendrerit nunc congue vitae.</p>
+        </ng-template>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="templateExemple4"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <ng-template ngFor let-fruit [ngForOf]="['banana', 'orange', 'apple']">
+          <p>{{fruit}}</p>
+        </ng-template>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="templateExemple5"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <input id="veganRadio" type="radio" name="menu" value="vegan" [(ngModel)]="menu" />
+        <label for="veganRadio"> Vegan</label><br />
+        <input id="pastaRadio" type="radio" name="menu" value="pasta" [(ngModel)]="menu" />
+        <label for="pastaRadio"> Pasta</label><br />
+        <input id="meatRadio" type="radio" name="menu" value="meat" [(ngModel)]="menu" />
+        <label for="meatRadio"> Meat</label><br />
+        <input id="otherRadio" type="radio" name="menu" value="other" [(ngModel)]="menu" />
+        <label for="otherRadio"> Other</label><br />
+        <div [ngSwitch]="menu">
+          <ng-template [ngSwitchCase]="'vegan'">Tropical salad</ng-template>
+          <ng-template [ngSwitchCase]="'pasta'">Macaroni with carbonara sauce</ng-template>
+          <ng-template [ngSwitchCase]="'meat'">Pork Chops</ng-template>
+          <ng-template ngSwitchDefault>Paella</ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="templateExemple6"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <button (click)="show = !show">Toggle</button>
+        <ng-template *ngIf="show" ngFor let-fruit [ngForOf]="['banana', 'orange', 'apple']">
+          <p>{{fruit}}</p>
+        </ng-template>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="templateExemple7"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <input id="veganRadio2" type="radio" name="menu2" value="vegan" [(ngModel)]="menu" />
+        <label for="veganRadio2"> Vegan</label><br />
+        <input id="pastaRadio2" type="radio" name="menu2" value="pasta" [(ngModel)]="menu" />
+        <label for="pastaRadio2"> Pasta</label><br />
+        <input id="meatRadio2" type="radio" name="menu2" value="meat" [(ngModel)]="menu" />
+        <label for="meatRadio2"> Meat</label><br />
+        <input id="otherRadio2" type="radio" name="menu2" value="other" [(ngModel)]="menu" />
+        <label for="otherRadio2"> Other</label><br />
+        <ul [ngSwitch]="menu">
+          <ng-template [ngSwitchCase]="'vegan'"
+            *ngFor="let vfood of ['Tropical salad', 'Falafel Tabouli Wrap', 'Vegetable Paella']">
+            <li>{{vfood}}</li>
+          </ng-template>
+          <ng-template [ngSwitchCase]="'pasta'" *ngFor="let pfood of ['Macaroni', 'Spaguettis', 'Tagliatelle']">
+            <li>{{pfood}}</li>
+          </ng-template>
+          <ng-template [ngSwitchCase]="'meat'" *ngFor="let mfood of ['Pork Chops', 'Hamburguer', 'Chicken Wings']">
+            <li>{{mfood}}</li>
+          </ng-template>
+          <ng-template ngSwitchDefault *ngFor="let ofood of ['Paella', 'Fabada']">
+            <li>{{ofood}}</li>
+          </ng-template>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+</div>

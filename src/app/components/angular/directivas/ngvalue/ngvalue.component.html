@@ -1,0 +1,67 @@
+<div class="content">
+  <header>
+    <h1 class="title">Directives</h1>
+    <h2 class="subtitle">NgValue</h2>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+    <p [innerHtml]="'angular.directives.ngvalue.explicacio1' | translate"></p>
+    <p [innerHtml]="'angular.directives.ngvalue.explicacio2' | translate"></p>
+
+    <h3 class="subtitle">{{ 'exemples' | translate }}</h3>
+
+    <h5 class="subtitle">{{ 'component' | translate }}</h5>
+    <pre><code [highlight]="component"></code></pre>
+
+    <h4 class="subtitle">{{ 'exemple' | translate }} 1</h4>
+
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="vista1"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <select [(ngModel)]="value1">
+          <option [value]="''">Empty</option>
+          <option [value]="null">Null</option>
+          <option [value]="undefined">Undefined</option>
+          <option [value]="'text'">Text</option>
+          <option [value]="{name: 'Ramon', surname: 'Garcia'}">Object</option>
+        </select>
+        <ng-container *ngTemplateOutlet="valueParams; context: { $implicit: value1 }"></ng-container>
+      </div>
+    </div>
+
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 2</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="vista2"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <select [(ngModel)]="value2">
+          <option [ngValue]="''">Empty</option>
+          <option [ngValue]="null">Null</option>
+          <option [ngValue]="undefined">Undefined</option>
+          <option [ngValue]="'text'">Text</option>
+          <option [ngValue]="{name: 'Ramon', surname: 'Garcia'}">Object</option>
+        </select>
+        <ng-container *ngTemplateOutlet="valueParams; context: { $implicit: value2 }"></ng-container>
+
+        <ng-template #valueParams let-value>
+          <ul>
+            <li>Value: {{value}}</li>
+            <li>Type: {{getTypeOf(value)}}</li>
+            <li>Null: {{value === null}}</li>
+            <li>Undefined: {{value === undefined}}</li>
+            <li *ngIf="getTypeOf(value) === 'object'">Full name: {{value.name}} {{value.surname}}</li>
+          </ul>
+        </ng-template>
+      </div>
+    </div>
+  </section>
+</div>

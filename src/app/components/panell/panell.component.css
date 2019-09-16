@@ -1,0 +1,32 @@
+.panel {
+  position: fixed;
+  width: 400px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: white;
+}
+
+.menu {
+  overflow: auto;
+  /* height: calc(100% - 180px); */
+  height: calc(100% - 91px);
+}
+
+.fas.fa-rxjs {
+  background-image: url('/assets/rxjs.png');
+  background-size: 14px 14px;
+  height: 14px;
+  width: 14px;
+}
+
+.is-active .fas.fa-rxjs {
+  background-image: url('/assets/rxjs_active.png');
+}
+
+.netejar {
+  margin-left: -28px;
+  color: black !important;
+  cursor: pointer !important;
+  pointer-events: initial !important;
+}

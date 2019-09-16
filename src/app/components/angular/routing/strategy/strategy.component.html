@@ -1,0 +1,27 @@
+<div class="content">
+  <header>
+    <h1 class="title">Routing</h1>
+    <h2 class="subtitle">{{ 'angular.routing.location.strategy.title' | translate }}</h2>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+    <p [innerHtml]="'angular.routing.location.strategy.explicacio' | translate"></p>
+    <!-- PathLocationStrategy -->
+    <h3 class="subtitle">PathLocationStrategy</h3>
+    <p [innerHtml]="'angular.routing.location.strategy.path1' | translate"></p>
+    <pre><code>http://localhost:4200/my-app/welcome/</code></pre>
+    <p [innerHtml]="'angular.routing.location.strategy.path2' | translate"></p>
+    <p [innerHtml]="'angular.routing.location.strategy.path3' | translate"></p>
+    <p [innerHtml]="'angular.routing.location.strategy.path4' | translate"></p>
+    <pre><code [highlight]="pathstrategy"></code></pre>
+    <!-- HashLocationStrategy -->
+    <h3 class="subtitle">HashLocationStrategy</h3>
+    <p [innerHtml]="'angular.routing.location.strategy.hash1' | translate"></p>
+    <pre><code>http://localhost:4200/my-app/#/welcome/</code></pre>
+    <p [innerHtml]="'angular.routing.location.strategy.hash2' | translate"></p>
+    <p [innerHtml]="'angular.routing.location.strategy.hash3' | translate"></p>
+    <p [innerHtml]="'angular.routing.location.strategy.hash4' | translate"></p>
+    <pre><code [highlight]="hashstrategy"></code></pre>
+  </section>
+</div>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:complexType name="variable_dependencia">
+        <xs:sequence>
+            <xs:element type="xs:string" name="pestanya" />
+            <xs:element type="xs:string" name="seccio" />
+            <xs:element type="xs:integer" name="fila" minOccurs="0" />
+            <xs:element type="xs:integer" name="columna" minOccurs="0" />
+            <xs:element type="xs:string" name="codi" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="variables_depenents">
+        <xs:sequence>
+            <xs:element name="variable_depenent" type="variable_dependencia" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="variable_enviament" >
+        <xs:complexContent>
+            <xs:extension base="variable">
+                <xs:sequence>
+                    <xs:element name="valor" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="item" type="xs:string" maxOccurs="unbounded" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="variable">
+        <xs:sequence>
+            <xs:element type="xs:string" name="id" />
+            <xs:element type="xs:string" name="etiqueta" />
+            <xs:element type="xs:string" name="description" />
+            <xs:element type="xs:string" name="comentari" />
+            <xs:element type="xs:boolean" name="obligatoria" />
+            <xs:element type="xs:integer" name="fila" />
+            <xs:element type="xs:integer" name="columna" />
+            <xs:element type="xs:string" name="data_type" />
+            <xs:element type="xs:string" name="arquetip" minOccurs="0" />
+            <xs:element type="xs:string" name="descripcio_arquetip" minOccurs="0" />
+            <xs:element type="xs:string" name="min_val" minOccurs="0" />
+            <xs:element type="xs:string" name="max_val" minOccurs="0" />
+            <xs:element type="xs:integer" name="vigencia" minOccurs="0" />
+            <xs:element type="xs:string" name="vigenciaUnit" minOccurs="0" />
+
+            <xs:element name="measureUnit" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="description" />
+                        <xs:element type="xs:string" name="abbreviature" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="default_value" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="item" type="xs:string" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="value_list" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="item_list" maxOccurs="unbounded" >
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element type="xs:string" name="code" />
+                                    <xs:element type="xs:string" name="description" />
+                                    <xs:element type="xs:integer" name="order" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="fonts_dades" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="item_list" maxOccurs="unbounded" >
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element type="xs:string" name="font" />
+                                    <xs:element type="xs:string" name="codi_extern" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="dependencies" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="dependencia" maxOccurs="unbounded" >
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element type="xs:string" name="tipus" />
+                                    <xs:element type="xs:string" name="regla" />
+                                    <xs:element type="xs:string" name="valor1" minOccurs="0" />
+                                    <xs:element type="xs:string" name="valor2" minOccurs="0" />
+                                    <xs:element name="variable" type="variable_dependencia" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="variables_depenents" type="variables_depenents" minOccurs="0" />
+
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>

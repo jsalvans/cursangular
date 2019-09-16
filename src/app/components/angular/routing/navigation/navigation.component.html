@@ -1,0 +1,141 @@
+<div class="content">
+  <header>
+    <h1 class="title">Routing</h1>
+    <h2 class="subtitle">{{ 'angular.routing.navigation.title' | translate }}</h2>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+    <p [innerHtml]="'angular.routing.navigation.explicacio' | translate"></p>
+    <!-- Router Outlet -->
+    <h3 class="subtitle">Router Outlet</h3>
+    <p [innerHtml]="'angular.routing.navigation.router.outlet1' | translate"></p>
+    <pre><code highlight="<router-outlet></router-outlet>"></code></pre>
+    <p [innerHtml]="'angular.routing.navigation.router.outlet2' | translate"></p>
+    <!-- Router Link -->
+    <h3 class="subtitle">Router Link</h3>
+    <p [innerHtml]="'angular.routing.navigation.router.link' | translate"></p>
+    <h4 class="subtitle">{{ 'exemples' | translate }}</h4>
+    <p [innerHtml]="'angular.routing.navigation.router.link.exemple1' | translate"></p>
+    <div class="columns is-desktop">
+      <div class="column is-3-desktop">
+        <pre><code [highlight]="routerlink1"></code></pre>
+      </div>
+      <div class="column is-1-desktop">
+        <div [ngClass]="{'is-divider-vertical': !size.isMobile(), 'is-divider': size.isMobile()}"
+          [attr.data-content]="'or' | translate">
+        </div>
+      </div>
+      <div class="column is-4-desktop">
+        <pre><code [highlight]="routerlink2"></code></pre>
+      </div>
+      <div class="column is-1-desktop">
+        <div [ngClass]="{'is-divider-vertical': !size.isMobile(), 'is-divider': size.isMobile()}"
+          [attr.data-content]="'or' | translate">
+        </div>
+      </div>
+      <div class="column is-3-desktop">
+        <pre><code [highlight]="routerlink3"></code></pre>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <p [innerHtml]="'angular.routing.navigation.router.link.exemple2' | translate"></p>
+    <div class="columns is-desktop">
+      <div class="column is-5-desktop">
+        <pre><code [highlight]="routerlink4"></code></pre>
+      </div>
+      <div class="column is-1-desktop">
+        <div [ngClass]="{'is-divider-vertical': !size.isMobile(), 'is-divider': size.isMobile()}"
+          [attr.data-content]="'or' | translate">
+        </div>
+      </div>
+      <div class="column is-6-desktop">
+        <pre><code [highlight]="routerlink5"></code></pre>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-5-desktop">
+        <p [innerHtml]="'angular.routing.navigation.router.link.exemple3' | translate"></p>
+        <pre><code [highlight]="routerlink6"></code></pre>
+      </div>
+      <div class="column is-1-desktop">
+        <div [ngClass]="{'is-divider-vertical': !size.isMobile(), 'is-divider': size.isMobile()}">
+        </div>
+      </div>
+      <div class="column is-6-desktop">
+        <p [innerHtml]="'angular.routing.navigation.router.link.exemple4' | translate"></p>
+        <pre><code [highlight]="routerlink7"></code></pre>
+      </div>
+    </div>
+    <!-- Router Link Active -->
+    <h3 class="subtitle">Router Link Active</h3>
+    <p [innerHtml]="'angular.routing.navigation.router.link.active1' | translate"></p>
+    <p [innerHtml]="'angular.routing.navigation.router.link.active2' | translate"></p>
+    <br />
+    <h4 class="subtitle">{{ 'exemples' | translate }}</h4>
+    <p [innerHtml]="'angular.routing.navigation.router.link.active.exemple1' | translate"></p>
+    <pre><code [highlight]="routerlinkactive1"></code></pre>
+    <div class="is-divider"></div>
+    <p [innerHtml]="'angular.routing.navigation.router.link.active.exemple2' | translate"></p>
+    <div class="columns is-desktop">
+      <div class="column is-one-5-desktop">
+        <pre><code [highlight]="routerlinkactive1"></code></pre>
+      </div>
+      <div class="column is-1-desktop">
+        <div [ngClass]="{'is-divider-vertical': !size.isMobile(), 'is-divider': size.isMobile()}"
+          [attr.data-content]="'or' | translate">
+        </div>
+      </div>
+      <div class="column is-one-6-desktop">
+        <pre><code [highlight]="routerlinkactive2"></code></pre>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <p [innerHtml]="'angular.routing.navigation.router.link.active.exemple3' | translate"></p>
+    <div class="columns is-desktop">
+      <div class="column is-one-5-desktop">
+        <pre><code [highlight]="routerlinkactive3"></code></pre>
+      </div>
+      <div class="column is-1-desktop">
+        <div [ngClass]="{'is-divider-vertical': !size.isMobile(), 'is-divider': size.isMobile()}"
+          [attr.data-content]="'or' | translate">
+        </div>
+      </div>
+      <div class="column is-one-6-desktop">
+        <pre><code [highlight]="routerlinkactive4"></code></pre>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <p [innerHtml]="'angular.routing.navigation.router.link.active.exemple4' | translate"></p>
+    <pre><code [highlight]="routerlinkactive5"></code></pre>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-one-8-desktop">
+        <pre><code [highlight]="routerlinkactive6"></code></pre>
+      </div>
+      <div class="column is-one-6-desktop">
+        <img src="assets/RouterLinkActive.gif" />
+      </div>
+    </div>
+    <!-- Router -->
+    <h3 class="subtitle">Router</h3>
+    <p [innerHtml]="'angular.routing.navigation.router' | translate"></p>
+    <br />
+    <h4 class="subtitle">{{ 'exemples' | translate }}</h4>
+    <div class="columns is-desktop">
+      <div class="column is-one-third-desktop">
+        <p [innerHtml]="'angular.routing.navigation.router.exemple1' | translate"></p>
+        <pre><code [highlight]="routercomponent1"></code></pre>
+      </div>
+      <div class="column is-one-third-desktop">
+        <p [innerHtml]="'angular.routing.navigation.router.exemple2' | translate"></p>
+        <pre><code [highlight]="routercomponent2"></code></pre>
+      </div>
+      <div class="column is-one-third-desktop">
+        <p [innerHtml]="'angular.routing.navigation.router.exemple3' | translate"></p>
+        <pre><code [highlight]="routercomponent3"></code></pre>
+      </div>
+    </div>
+  </section>
+</div>

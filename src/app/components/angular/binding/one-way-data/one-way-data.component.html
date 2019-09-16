@@ -1,0 +1,82 @@
+<div class="content">
+  <header>
+    <h1 class="title">Data Bindings</h1>
+    <h2 class="subtitle">One Way - From data</h2>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+    <p>{{ 'angular.binding.oneway.explicacio' | translate }}</p>
+    <p>{{ 'representacio.title' | translate }}</p>
+    <ul>
+      <li ngNonBindable><code>{{expression}}</code></li>
+      <li ngNonBindable><code>[target]="expression"</code></li>
+      <li ngNonBindable><code>bind-target="expression"</code></li>
+    </ul>
+    <p [innerHtml]="'angular.binding.oneway.on' | translate"></p>
+
+    <h3 class="subtitle">{{ 'exemple' | translate }} 1</h3>
+
+    <div class="columns">
+      <div class="column">
+        <h4 class="subtitle">{{ 'component' | translate }}</h4>
+        <pre><code [highlight]="component"></code></pre>
+      </div>
+      <div class="column">
+        <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+        <pre><code [highlight]="vista1"></code></pre>
+        <div class="is-divider" [attr.data-content]="'or' | translate"></div>
+        <pre><code [highlight]="vista2"></code></pre>
+        <div class="is-divider" [attr.data-content]="'or' | translate"></div>
+        <pre><code [highlight]="vista3"></code></pre>
+      </div>
+    </div>
+
+    <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+    <div class="columns">
+      <div class="column">
+        <p>{{variable}}</p>
+      </div>
+      <div class="is-divider-vertical" [attr.data-content]="'or' | translate"></div>
+      <div class="column">
+        <p [innerHTML]="variable"></p>
+      </div>
+      <div class="is-divider-vertical" [attr.data-content]="'or' | translate"></div>
+      <div class="column">
+        <p bind-innerHTML="variable"></p>
+      </div>
+    </div>
+
+    <h3 class="subtitle">{{ 'exemple' | translate }} 2 ({{ 'mateix.component' | translate }})</h3>
+
+    <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+    <div class="columns">
+      <div class="column">
+        <pre><code [highlight]="vista4"></code></pre>
+      </div>
+      <div class="is-divider-vertical" [attr.data-content]="'or' | translate"></div>
+      <div class="column">
+        <pre><code [highlight]="vista5"></code></pre>
+      </div>
+      <div class="is-divider-vertical" [attr.data-content]="'or' | translate"></div>
+      <div class="column">
+        <pre><code [highlight]="vista6"></code></pre>
+      </div>
+    </div>
+
+    <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+    <div class="columns">
+      <div class="column">
+        <input value="{{variable}}" />
+      </div>
+      <div class="is-divider-vertical" [attr.data-content]="'or' | translate"></div>
+      <div class="column">
+        <input [value]="variable" />
+      </div>
+      <div class="is-divider-vertical" [attr.data-content]="'or' | translate"></div>
+      <div class="column">
+        <input bind-value="variable" />
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,53 @@
+<nav class="panel">
+  <p class="panel-heading">
+    {{ 'title' | translate }}
+    <span style="float: right">
+      <a (click)="translate.use('ca')" [ngClass]="{'has-text-weight-bold': translate.currentLang === 'ca'}">CA</a>
+      <span> | </span>
+      <a (click)="translate.use('es')" [ngClass]="{'has-text-weight-bold': translate.currentLang === 'es'}">ES</a>
+    </span>
+  </p>
+  <div class="panel-block">
+    <p class="control has-icons-left">
+      <input class="input is-small" type="text" [placeholder]="'cercar' | translate" [(ngModel)]="filtre">
+      <span class="icon is-small is-left">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </span>
+      <span class="icon is-small is-right netejar" (click)="filtre = ''" *ngIf="filtre">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </span>
+    </p>
+  </div>
+  <!-- <p class="panel-tabs">
+    <a [ngClass]="{'is-active': tipusSeleccionat === null}"
+      (click)="tipusSeleccionat = null">{{ 'tots' | translate }}</a>
+    <a *ngFor="let type of Tipus.values();" [ngClass]="{'is-active': tipusSeleccionat === type}"
+      (click)="tipusSeleccionat = type">{{type}}</a>
+  </p> -->
+  <div class="menu">
+    <ng-template ngFor let-pagina [ngForOf]="pagines | filtre : filtre : tipusSeleccionat">
+      <span *ngIf="!pagina.url; else paginaUrl" class="panel-block">
+        <span class="panel-icon">
+          <i [ngClass]="pagina.icon" aria-hidden="true"></i>
+        </span>
+        <strong>
+          {{pagina.nom}}
+        </strong>
+      </span>
+      <ng-template #paginaUrl>
+        <a [routerLink]="[pagina.url]" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}"
+          class="panel-block" style="padding-left:2em;">
+          <span class="panel-icon">
+            <i [ngClass]="pagina.icon" aria-hidden="true"></i>
+          </span>
+          <span>{{pagina.traduir ? (pagina.nom | translate) : pagina.nom}}</span>
+        </a>
+      </ng-template>
+    </ng-template>
+  </div>
+  <!-- <div class="panel-block">
+    <button class="button is-link is-outlined is-fullwidth" (click)="netejar()">
+      {{ 'netejar.filtre' | translate }}
+    </button>
+  </div> -->
+</nav>

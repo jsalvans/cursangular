@@ -9,6 +9,8 @@
 
 # dependencies
 /node_modules
+/.vscode
+/e2e
 
 # profiling files
 chrome-profiler-events.json
@@ -44,3 +46,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+package-lock.json

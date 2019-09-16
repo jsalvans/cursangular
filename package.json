@@ -1,13 +1,16 @@
 {
   "name": "exemples",
-  "version": "0.0.0",
+  "version": "0.5.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "githubpages": "npm run build-for-git && npm run upload-to-pages",
+    "build-for-git": "ng build --prod --base-href \"https://jsalvans.github.io/cursangulardist/\"",
+    "upload-to-pages": "npx angular-cli-ghpages --dir=dist/exemples --repo=https://483db6fd4784706a079b2ca3d8b50f17fc712d52@github.com/jsalvans/cursangulardist.git"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +22,13 @@
     "@angular/platform-browser": "~8.1.0",
     "@angular/platform-browser-dynamic": "~8.1.0",
     "@angular/router": "~8.1.0",
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
+    "bulma": "^0.7.5",
+    "bulma-extensions": "^6.2.7",
+    "highlight.js": "^9.15.8",
+    "ngx-highlightjs": "^3.0.3",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -28,9 +38,10 @@
     "@angular/cli": "~8.1.0",
     "@angular/compiler-cli": "~8.1.0",
     "@angular/language-service": "~8.1.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^8.9.5",
+    "angular-cli-ghpages": "^0.5.3",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",

@@ -1,0 +1,78 @@
+<div class="content">
+  <header>
+    <h1 class="title">Directives</h1>
+    <h2 class="subtitle">NgTemplateOutlet</h2>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+    <p [innerHtml]="'angular.directives.ngtemplateoutlet.explicacio' | translate"></p>
+
+    <p>{{ 'representacio.title' | translate }}</p>
+    <ul>
+      <li>
+        <pre><code [highlight]='explicacio1'></code></pre>
+      </li>
+      <li>
+        <pre><code [highlight]='explicacio2'></code></pre>
+      </li>
+      <li>
+        <pre><code [highlight]='explicacio3'></code></pre>
+      </li>
+    </ul>
+    <div [innerHtml]="'angular.directives.ngtemplateoutlet.on' | translate"></div>
+
+    <h3 class="subtitle">{{ 'exemples' | translate }}</h3>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+        <pre><code [highlight]='exemple1'></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <ng-container *ngTemplateOutlet="greet"></ng-container>
+        <ng-template #greet><span>Hello</span></ng-template>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+        <pre><code [highlight]='exemple2'></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <ng-container *ngTemplateOutlet="eng; context: { $implicit: 'World' }"></ng-container>
+        <ng-template #eng let-name><span>Hello {{name}}!</span></ng-template>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+        <pre><code [highlight]='exemple3'></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <ng-container *ngTemplateOutlet="svk; context: { $implicit: 'World', localSk: 'Svet' }"></ng-container>
+        <ng-template #svk let-person="localSk"><span>Ahoj {{person}}!</span></ng-template>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'component' | translate }}</h4>
+        <pre><code [highlight]='exemple4component'></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+        <pre><code [highlight]='exemple4'></code></pre>
+
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <ng-container *ngTemplateOutlet="esp; context: myContext"></ng-container>
+        <ng-template #esp let-person="localEs"><span>¡Hola {{person}}!</span></ng-template>
+      </div>
+    </div>
+
+  </section>
+</div>

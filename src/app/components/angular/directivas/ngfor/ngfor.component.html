@@ -1,0 +1,172 @@
+<div class="content">
+  <header>
+    <h1 class="title">Directives</h1>
+    <h2 class="subtitle">ngFor</h2>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+    <p [innerHtml]="'angular.directives.ngfor.explicacio' | translate"></p>
+    <p>{{ 'representacio.title' | translate }}</p>
+    <ul>
+      <li><code ngNonBindable>*ngFor="let element of array"</code></li>
+      <li><code ngNonBindable>ngFor let-element [ngForOf]="array"</code>
+        ({{ 'angular.directives.ngif.nomes.ngtemplate' | translate}})</li>
+    </ul>
+    <p [innerHtml]="'angular.directives.ngfor.on' | translate"></p>
+
+    <h3 class="subtitle">{{ 'angular.directives.ngfor.vars.title' | translate }}</h3>
+    <p [innerHtml]="'angular.directives.ngfor.vars.explicacio1' | translate"></p>
+
+    <table>
+      <tr>
+        <th>{{ 'variable' | translate }}</th>
+        <th>{{ 'explicacio' | translate }}</th>
+      </tr>
+      <tr>
+        <td><code>index</code></td>
+        <td [innerHtml]="'angular.directives.ngfor.vars.index' | translate"></td>
+      </tr>
+      <tr>
+        <td><code>first</code></td>
+        <td [innerHtml]="'angular.directives.ngfor.vars.first' | translate"></td>
+      </tr>
+      <tr>
+        <td><code>last</code></td>
+        <td [innerHtml]="'angular.directives.ngfor.vars.last' | translate"></td>
+      </tr>
+      <tr>
+        <td><code>odd</code></td>
+        <td [innerHtml]="'angular.directives.ngfor.vars.odd' | translate"></td>
+      </tr>
+      <tr>
+        <td><code>even</code></td>
+        <td [innerHtml]="'angular.directives.ngfor.vars.even' | translate"></td>
+      </tr>
+    </table>
+
+    <p [innerHtml]="'angular.directives.ngfor.vars.explicacio2' | translate"></p>
+
+    <ul>
+      <li><code ngNonBindable>*ngFor="let element of array; variable as alias"</code></li>
+      <li><code ngNonBindable>ngFor let-element [ngForOf]="array" let-alias="variable"</code>
+        ({{ 'angular.directives.ngif.nomes.ngtemplate' | translate}})</li>
+    </ul>
+    <p [innerHtml]="'angular.directives.ngfor.vars.on' | translate"></p>
+
+    <h3 class="subtitle">{{ 'exemples' | translate }}</h3>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+        <pre><code [highlight]='exemple1'></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <ul>
+          <li *ngFor="let fruit of ['banana','apple','orange']">{{fruit}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+        <pre><code [highlight]='exemple2'></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <ul>
+          <ng-template ngFor let-fruit [ngForOf]="['banana','apple','orange']">
+            <li>{{fruit}}</li>
+          </ng-template>
+        </ul>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+        <pre><code [highlight]='exemple3'></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <table>
+          <tr>
+            <th>{{ 'angular.directives.ngfor.exemple.element' | translate}}</th>
+            <th>{{ 'angular.directives.ngfor.exemple.index' | translate}}</th>
+            <th>{{ 'angular.directives.ngfor.exemple.esprimer' | translate}}</th>
+            <th>{{ 'angular.directives.ngfor.exemple.esultim' | translate}}</th>
+            <th>{{ 'angular.directives.ngfor.exemple.espar' | translate}}</th>
+            <th>{{ 'angular.directives.ngfor.exemple.esimpar' | translate}}</th>
+          </tr>
+          <tr *ngFor="let fruit of ['banana','apple','orange'];
+              index as i; first as isFirst; last as isLast;
+              even as isEven; odd as isOdd">
+            <td>{{fruit}}</td>
+            <td>{{i}}</td>
+            <td>{{(isFirst ? 'si' : 'no') | translate}}</td>
+            <td>{{(isLast ? 'si' : 'no') | translate}}</td>
+            <td>{{(isOdd ? 'si' : 'no') | translate}}</td>
+            <td>{{(isEven ? 'si' : 'no') | translate}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+        <pre><code [highlight]='exemple4'></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+        <table>
+          <tr>
+            <th>{{ 'angular.directives.ngfor.exemple.element' | translate}}</th>
+            <th>{{ 'angular.directives.ngfor.exemple.index' | translate}}</th>
+            <th>{{ 'angular.directives.ngfor.exemple.esprimer' | translate}}</th>
+            <th>{{ 'angular.directives.ngfor.exemple.esultim' | translate}}</th>
+            <th>{{ 'angular.directives.ngfor.exemple.espar' | translate}}</th>
+            <th>{{ 'angular.directives.ngfor.exemple.esimpar' | translate}}</th>
+          </tr>
+          <ng-template ngFor let-fruit [ngForOf]="['banana','apple','orange']" let-i="index" let-isFirst="first"
+            let-isLast="last" let-isEven="even" let-isOdd="odd">
+            <tr>
+              <td>{{fruit}}</td>
+              <td>{{i}}</td>
+              <td>{{(isFirst ? 'si' : 'no') | translate}}</td>
+              <td>{{(isLast ? 'si' : 'no') | translate}}</td>
+              <td>{{(isOdd ? 'si' : 'no') | translate}}</td>
+              <td>{{(isEven ? 'si' : 'no') | translate}}</td>
+            </tr>
+          </ng-template>
+        </table>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'component' | translate }}</h4>
+        <pre><code [highlight]='exemple5component'></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'vista' | translate }}</h4>
+        <pre><code [highlight]='exemple5'></code></pre>
+      </div>
+    </div>
+    <h4 class="subtitle">{{ 'resultat' | translate }}</h4>
+    <table>
+      <tr>
+        <th>{{ 'angular.directives.ngfor.exemple.nom' | translate }}</th>
+        <th>{{ 'angular.directives.ngfor.exemple.cognoms' | translate }}</th>
+        <th>{{ 'angular.directives.ngfor.exemple.edat' | translate }}</th>
+      </tr>
+      <tr *ngFor="let element of array">
+        <td>{{element.name}}</td>
+        <td>{{element.surname}}</td>
+        <td>{{element.age}}</td>
+      </tr>
+    </table>
+
+  </section>
+</div>

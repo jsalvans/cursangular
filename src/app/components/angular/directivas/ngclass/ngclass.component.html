@@ -1,0 +1,216 @@
+<div class="content">
+  <header>
+    <h1 class="title">Directives</h1>
+    <h2 class="subtitle">ngClass</h2>
+    <div class="is-divider"></div>
+  </header>
+  <section>
+    <h3 class="subtitle">{{ 'que.es' | translate }}</h3>
+    <p [innerHtml]="'angular.directives.ngclass.explicacio1' | translate"></p>
+    <p [innerHtml]="'angular.directives.ngclass.explicacio2' | translate"></p>
+
+    <table>
+      <tr>
+        <th>{{ 'tipus' | translate }}</th>
+        <th style="width: 350px;">{{ 'exemple' | translate }}</th>
+        <th>{{ 'explicacio' | translate }}</th>
+      </tr>
+      <tr *ngFor="let representacion of representacions">
+        <td>{{representacion.tipus}}</td>
+        <td><code>{{representacion.exemple}}</code></td>
+        <td>{{representacion.desc | translate}}</td>
+      </tr>
+    </table>
+
+    <h3 class="subtitle">{{ 'exemples' | translate }}</h3>
+
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">{{ 'component' | translate }}</h4>
+        <pre><code [highlight]="component"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h4 class="subtitle">CSS</h4>
+        <pre><code [highlight]="css"></code></pre>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 1</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple1"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [ngClass]="'class1'">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 2</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple2"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [ngClass]="'class1 class2'">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 3</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple3"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [ngClass]="['class1']">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 4</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple4"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [ngClass]="['class1', 'class2']">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 5</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple5"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <button (click)="reload1()">Toggle 1</button>
+        <p [ngClass]="{ 'class1': condition1 }">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 6</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple6"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <button (click)="reload1()">Toggle 1</button>
+        <p [ngClass]="{ 'class1 class2': condition1 }">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 7</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple7"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <button (click)="reload1()">Toggle 1</button>
+        <button (click)="reload2()">Toggle 2</button>
+        <p [ngClass]="{ 'class1 class2': condition1, 'class3': condition2 }">Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 8</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple8"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [ngClass]="stringVar1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 9</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple9"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [ngClass]="stringVar2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 10</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple10"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [ngClass]="arrayVar1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 11</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple11"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <p [ngClass]="arrayVar2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 12</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple12"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <button (click)="reload1()">Toggle 1</button>
+        <p [ngClass]="objectVar1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 13</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple13"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <button (click)="reload1()">Toggle 1</button>
+        <p [ngClass]="objectVar2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="is-divider"></div>
+    <h4 class="subtitle">{{ 'exemple' | translate }} 14</h4>
+    <div class="columns is-desktop">
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'vista' | translate }}</h5>
+        <pre><code [highlight]="exemple14"></code></pre>
+      </div>
+      <div class="column is-6-desktop">
+        <h5 class="subtitle">{{ 'resultat' | translate }}</h5>
+        <button (click)="reload1()">Toggle 1</button>
+        <button (click)="reload2()">Toggle 2</button>
+        <p [ngClass]="objectVar3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+
+  </section>
+</div>

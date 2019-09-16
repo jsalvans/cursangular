@@ -55,4 +55,9 @@ export class PanellComponent implements OnInit {
     this.tipusSeleccionat = null;
   }
 
+  changeLang(lang: string) {
+    this.translate.use(lang);
+    this.netejar();
+  }
+
 }

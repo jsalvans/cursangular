@@ -94,7 +94,7 @@ export class LoginComponent {
   password: string;
 
   constructor(public router: Router,
-    public authService: AuthGuardService) { }
+              public authService: AuthGuardService) { }
 
   login() {
     if (this.username === 'admin' && this.password === '1234') {
@@ -115,8 +115,8 @@ import { AuthGuardService } from './services/auth-guard.service';
   selector: 'app-root',
   template: \`
   <div *ngIf="this.router.url !== '/login'">
-    <a routerLink="welcome" routerLinkActive="activated">Welcome</a> | 
-    <a routerLink="notes" routerLinkActive="activated">Notes</a> | 
+    <a routerLink="welcome" routerLinkActive="activated">Welcome</a> |
+    <a routerLink="notes" routerLinkActive="activated">Notes</a> |
     <a href="#" (click)="logout()">Log out</a>
     <br />
   </div>
@@ -198,9 +198,7 @@ export class NoteComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.id = params['id'];
-    });
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 
 }`;

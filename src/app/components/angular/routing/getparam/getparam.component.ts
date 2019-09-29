@@ -10,9 +10,7 @@ export class GetparamComponent implements OnInit {
 
   constructor(public size: SizeService) { }
 
-  ngOnInit() { }
-
-  recuperarParams: string = `import { Component, OnInit } from '@angular/core';
+  recuperarParams1: string = `import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'; // <---
 
 @Component({
@@ -22,7 +20,27 @@ import { ActivatedRoute } from '@angular/router'; // <---
 })
 export class Component implements OnInit {
 
-  constructor(private route: ActivatedRoute,) { } // <---
+  constructor(private route: ActivatedRoute) { } // <---
+
+  id: string;
+
+  ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id'); // <---
+  }
+
+}`;
+
+  recuperarParams2: string = `import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'; // <---
+
+@Component({
+selector: 'app-compoment',
+templateUrl: './component.html',
+styleUrls: ['./component.css']
+})
+export class Component implements OnInit {
+
+  constructor(private route: ActivatedRoute) { } // <---
 
   id: string;
 
@@ -33,5 +51,7 @@ export class Component implements OnInit {
   }
 
 }`;
+
+  ngOnInit() { }
 
 }
